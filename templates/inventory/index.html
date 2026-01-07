@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<h1>Inventory Management System</h1>
+
+<div class="form-container">
+    <input type="hidden" id="item-id">
+
+    <input type="text" id="name" placeholder="Item Name">
+    <input type="number" id="quantity" placeholder="Quantity">
+    <input type="number" step="0.01" id="price" placeholder="Price">
+    <textarea id="description" placeholder="Description"></textarea>
+
+    <button onclick="saveItem()">Save Item</button>
+</div>
+
+<div class="actions">
+    <a href="/api/items/export/pdf/" target="_blank">Export PDF</a>
+    <a href="/api/items/export/excel/" target="_blank">Export Excel</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="items-table"></tbody>
+</table>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
